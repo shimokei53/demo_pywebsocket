@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Sample Page</title>
+        <script type="text/javascript">
+        <!--
+        var socket;
+        function init(){
+            socket = new WebSocket("ws://" + window.location.host + "/demo");
+            socket.onopen = function(e){
+                var h1 = document.getElementById("status");
+                h1.innerHTML = "open websocket!";
+            }
+            socket.onmessage = function(e){
+                var p = document.getElementById("msg");
+                p.innerHTML = "time:" + e.data;
+            }
+            socket.onerror = function(e){
+                var h1 = document.getElementById("status");
+                h1.innerHTML = "error!";
+            }
+            socket.onclose = function(e){
+                var h1 = document.getElementById("status");
+                h1.innerHTML = "close websocket.";
+            }
+        }
+        init();
+        //-->
+        </script>
+    </head>
+    <body>
+        <h1 id="status"></h1>
+        <p id="msg"></p>
+    </body>
+</html>
